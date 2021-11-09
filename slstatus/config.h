@@ -67,9 +67,9 @@ static const struct arg args[] = {
 	/* function format          argument */
 //	{ username, "%s",           NULL    },
 //	{ hostname, "@%s|",         NULL    },
-	{ battery_perc, "🔋:%s%% ",	    "BAT0"    },
-	{ battery_remaining, "%s|", "BAT0"  },
+//	{ battery_perc, "🔋:%s%% ",	    "BAT0"    },
+//	{ battery_remaining, "%s|", "BAT0"  },
 //	{ wifi_essid,	"%s",	"wlan0"},
-	{ wifi_perc,	"📶:%s%%|",	"wlan0"},
+	{ wifi_perc,	"|📶:%s%%|",	"wlo1"},
 	{ datetime, "%s",           "%F %T" },
 };
