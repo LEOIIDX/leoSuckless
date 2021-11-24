@@ -99,7 +99,7 @@ float alpha = 0.6;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
+	"#222222",
 	"#d24d44",
 	"#73d0a3",
 	"#ffe27b",
