@@ -3,10 +3,11 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int rmaster            = 1;        /* 1 means master-area is initially on the right */
+static const unsigned int gappx     = 5;        /* gap pixel between windows */
+static const int rmaster            = 0;        /* 1 means master-area is initially on the right */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack:size=12", "twemoji:pixelsize=15" };
+static const char *fonts[]          = { "Hack:size=12", "Noto Color Emoji:pixelsize=15" };
 static const char dmenufont[]       = "Hack:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -30,13 +31,12 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "easyeffects", NULL,	  NULL,	      1 << 8,	    0,		  1 },
+	{ "PulseEffects", NULL,	  NULL,	      1 << 8,	    0,		  1 },
 	{ "Pavucontrol", NULL,	  NULL,       1 << 8,	    0,		  1 },
-	{ "electron16",  NULL,       NULL,       1 << 1,       0,            1 }
 };
 
 /* layout(s) */
-static const float mfact     = 0.35; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -88,6 +88,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
